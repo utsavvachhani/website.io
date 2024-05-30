@@ -6,7 +6,7 @@ body{
    that is currently Firefox-only */
 * {
     scrollbar-width: thin;
-    scrollbar-color: lightgray white;
+    scrollbar-color: rgb(173, 56, 56) white;
 }
 
 /* Works on Chrome/Edge/Safari */
@@ -15,15 +15,9 @@ body{
 }
 
 
-*::-webkit-scrollbar-thumb {
-    background-color: lightgray;
-    border-radius: 20px;
-    border: 3px solid white;
-}
-  
 
 hr {
-    background-color: whitesmoke;
+    background-color: rgb(37, 35, 35);
 }
 
 iframe{
@@ -31,12 +25,6 @@ iframe{
     height: max(22.7vw, 135px);
 }
 
-img {
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-select:none;
-    -webkit-touch-callout:none;
-}
 
 .shadowless {
     box-shadow: none!important;
@@ -111,74 +99,6 @@ img {
 
 .my-nav-content li a:hover {
     background-color: whitesmoke;
-}
-
-/* tutorial nav */
-
-.tutorial-nav {
-    display: flex;
-}
-
-
-.tutorial-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.tutorial-nav li {
-    float: left;
-}
-
-
-.tutorial-nav li a {
-    display: block;
-    padding: 16px;
-    text-decoration: none;
-}
-
-.tutorial-nav a:hover {
-    background-color: whitesmoke;
-}
-
-
-
-/* Other Project Reference Link */
-.other-projects{
-    margin-top: 2%;
-    color: lightgray;
-}
-
-.other-projects ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.other-projects li {
-    font-size: min(3.5vh, 3.5vw);
-    float: left;
-}
-
-
-.other-projects li a {
-    display: block;
-    color: lightgray;
-    padding: 16px;
-    text-decoration: none;
-}
-
-.other-projects li a:hover{
-    color: gray;
-}
-
-/* Copy Right Logo */
-.my-copyright {
-    text-align: center;
-    font-size: 1em;
-    color: black;
 }
 
 .float-right {
