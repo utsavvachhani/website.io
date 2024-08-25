@@ -6,7 +6,49 @@
     --input-border-color: #00ffff; /* Cyan border for input fields */
     --submit-bg-color: #00ffff; /* Cyan background for submit button */
     --submit-font-color: #1e1e1e; /* Dark text for submit button */
+    --hover-glow-color: #00ffff; /* Glow effect color */
+    --transition-speed: 0.3s; /* Speed for transitions */
 }
+
+/* Modern Tech (Dark Mode) */
+/* :root {   
+    --background-color: #121212; 
+    --font-color: #BB86FC; 
+    --form-color: #1F1F1F; 
+    --input-bg-color: #303030;
+    --input-border-color: #BB86FC; 
+    --submit-bg-color: #03DAC5; 
+    --submit-font-color: #121212; 
+    --hover-glow-color: #BB86FC; 
+    --transition-speed: 0.3s; 
+} */
+
+/* Dynamic and Energetic */
+/* :root {
+    --background-color: #0D1B2A; 
+    --font-color: #E0E1DD; 
+    --form-color: #1B263B; 
+    --input-bg-color: #415A77; 
+    --input-border-color: #E0E1DD; 
+    --submit-bg-color: #F2545B; 
+    --submit-font-color: #E0E1DD; 
+    --hover-glow-color: #F2545B; 
+    --transition-speed: 0.3s; 
+} */
+
+/* Futuristic and High-Contrast */
+/* :root {
+    --background-color: #000000; 
+    --font-color: #FFFFFF; 
+    --form-color: #1C1C1C; 
+    --input-bg-color: #333333; 
+    --input-border-color: #39FF14; 
+    --submit-bg-color: #39FF14; 
+    --submit-font-color: #000000; 
+    --hover-glow-color: #39FF14; 
+    --transition-speed: 0.3s; 
+} */
+
 
 * {
     margin: 0;
@@ -32,6 +74,7 @@ h2 {
     border-bottom: 2px solid var(--font-color);
     margin-bottom: 20px;
     text-transform: uppercase;
+    animation: fadeIn 1s ease-in-out; /* Subtle fade-in animation */
 }
 
 form {
@@ -40,7 +83,8 @@ form {
     border-radius: 15px;
     max-width: 500px;
     width: 100%;
-    box-shadow: 0px 4px 20px rgba(0, 255, 255, 0.2);
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.2);
+    animation: slideIn 0.5s ease-in-out; /* Form sliding in effect */
 }
 
 .form-group {
@@ -63,6 +107,12 @@ input[type="text"], input[type="email"], input[type="phone"], select {
     border: 2px solid var(--input-border-color);
     border-radius: 5px;
     color: var(--background-color);
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="phone"]:focus, select:focus {
+    border-color: var(--hover-glow-color);
+    box-shadow: 0px 0px 8px var(--hover-glow-color);
 }
 
 #submit {
@@ -76,18 +126,20 @@ input[type="text"], input[type="email"], input[type="phone"], select {
     color: var(--submit-font-color);
     cursor: pointer;
     text-transform: uppercase;
-    transition: all 0.3s ease;
+    transition: all var(--transition-speed) ease;
 }
 
 #submit:hover {
     opacity: 0.9;
     background-color: var(--background-color);
     color: var(--font-color);
+    box-shadow: 0px 0px 8px var(--hover-glow-color);
 }
 
 @media (max-width: 768px) {
     form {
         padding: 20px;
+        animation: none; /* Disables animation on mobile for smoother experience */
     }
 
     h2 {
@@ -96,5 +148,26 @@ input[type="text"], input[type="email"], input[type="phone"], select {
 
     input[type="text"], input[type="email"], input[type="phone"], select {
         padding: 10px;
+    }
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
